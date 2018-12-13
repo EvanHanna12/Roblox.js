@@ -26,11 +26,18 @@ bot.on('message', message => {
   const args = mArray.slice(1)
   const com = mArray[0].slice(prefix.length)
   const cmd = bot.commands.get(com)
+  const role = message.member.roles.find(r => r.name == "Admin") || null
   if (cmd) {
     if (cmd.perm == "Admin") {
-      if (message.member.roles.find(r => r.name == "Admin")) return message.channel.send("Invalid permissions!") && cmd.run(bot, message, args);
-    } else if (cmd.perm == "All") return cmd.run(bot, message, args);
-  }  
+      if (role) {
+        cmd.run(bot, message, args);
+      } else {
+        message.channel.send("Invalid permissions!");
+      }
+    }
+    
+    cmd.run(bot, message, args)
+  }
 })
 
 bot.login(process.env.token)
