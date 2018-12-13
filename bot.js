@@ -29,7 +29,7 @@ bot.on('message', message => {
   
   if (cmd && cmd.perm == "All") {
     cmd.exec(bot, message, args);
-  } elseif (cmd.perm == "admin" && !message.member.roles.find(r => r.name == "Admin")) return message.channel.send("Invalid permissions!");
+  } elseif (cmd.perm == "admin" && !message.member.roles.find(r => r.name == "Admin")) { message.channel.send("Invalid permissions!") }
 })
 
 bot.login(process.env.token)
