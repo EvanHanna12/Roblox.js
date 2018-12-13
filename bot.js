@@ -6,6 +6,7 @@ const roblox = require('roblox-js')
 const fs = require('fs')
 bot.commands = new discord.Collection()
 console.log("Loading commands...");
+roblox.login(process.env.username, process.env.password)
 fs.readdir(`./commands/`, (err, files) => {
   if (err) return console.log("Error loading commands.");
   
