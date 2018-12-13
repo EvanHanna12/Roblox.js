@@ -28,14 +28,6 @@ bot.on('message', message => {
   const cmd = bot.commands.get(com)
   const role = message.member.roles.find(r => r.name == "Admin") || null
   if (cmd) {
-    if (cmd.perm == "Admin") {
-      if (role) {
-        cmd.run(bot, message, args);
-      } else {
-        message.channel.send("Invalid permissions!");
-      }
-    }
-    
     cmd.run(bot, message, args)
   }
 })
