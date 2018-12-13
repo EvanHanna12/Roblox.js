@@ -27,7 +27,7 @@ bot.on('message', message => {
   const com = mArray[0].slice(prefix.length)
   const cmd = bot.commands.get(com)
   
-  if (cmd && cmd.perm == "All) {
+  if (cmd && cmd.perm == "All") {
     cmd.exec(bot, message, args);
   } elseif (cmd.perm == "admin" && !message.member.roles.find(r => r.name == "Admin")) return message.channel.send("Invalid permissions!");
 })
