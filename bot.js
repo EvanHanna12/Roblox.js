@@ -5,6 +5,7 @@ const roblox = require('roblox-js')
 //const mongoose = require('mongoose')
 const fs = require('fs')
 bot.commands = new discord.Collection()
+bot.groupId = "4314732"
 console.log("Loading commands...");
 roblox.login(process.env.username, process.env.password)
 fs.readdir(`./commands/`, (err, files) => {
