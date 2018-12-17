@@ -1,7 +1,7 @@
 function runCmd(bot, message, args) {
   require('roblox-js').post(bot.groupId, args.join(" "));
   
-  message.channel.send(`I posted ${args.join(" ")} to the group wall.`)
+  message.channel.send(`I posted "${args.join(" ")}" to the group wall.`)
 }
 
 module.exports = {
