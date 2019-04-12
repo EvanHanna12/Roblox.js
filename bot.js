@@ -20,7 +20,7 @@ bot.on('ready', () => {
   console.log("Loading Roblox.js...")
   setTimeout(() => {console.log("Roblox.js is ready!")}, 2500)
   bot.user.setActivity("Loading Roblox.js...", {type: "STREAMING", url: "https://twitch.tv/discordapp"})
-  setTimeout(() => {bot.user.setActivity("over Hulk's Group 2.0 | r.help", {type: "WATCHING"})}, 10000)
+  setTimeout(() => {bot.user.setActivity("over Humans| r.help", {type: "WATCHING"})}, 10000)
 })
 
 bot.on('message', message => {
